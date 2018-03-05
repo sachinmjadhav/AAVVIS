@@ -1,0 +1,42 @@
+<div *ngIf="afAuth.authState | async as user; else showLogin">
+  <h1>Hello {{ user.displayName }}!</h1>
+  <button (click)="logout()">Logout</button>
+</div>
+<ng-template #showLogin>
+  <!-- <button (click)="loginGoogle()">Login with Google</button>
+  <button (click)="loginFb()">Login with Facebook</button>
+  <button (click)="loginTwitter()">Login with Twitter</button>
+  <button (click)="loginGithub()">Login with Github</button> -->
+
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col text-center">
+        <h2 class="text-blue" style="letter-spacing: 4px">LOGIN</h2>
+      </div>
+    </div>
+    <div class="row text-center justify-content-center">
+        <div class="col-md-6 col-sm-12 mt-5">
+            <img src="../assets/bulb.jpg" alt="Bulb Image" class="img-fluid">
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-4 col-sm-12 align-self-center">
+            <a (click)="loginGoogle()" class="text-white btn btn-block btn-social btn-google text-white btn-lg">
+                <span class="fa fa-google"></span> Sign in with Google
+            </a>
+            <br>
+            <a (click)="loginTwitter()" class="text-white btn btn-block btn-social btn-twitter btn-lg">
+                <span class="fa fa-twitter"></span> Sign in with Twitter
+            </a>
+            <br>
+            <a (click)="loginGithub()" class="text-white btn btn-block btn-social btn-github btn-lg">
+                <span class="fa fa-github"></span> Sign in with Github
+            </a>
+            <br>
+            <a (click)="loginFb()" class=" text-white btn btn-block btn-social btn-facebook btn-lg">
+                <span class="fa fa-facebook"></span> Sign in with Facebook
+            </a>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+</ng-template>
